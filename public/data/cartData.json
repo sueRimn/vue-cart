@@ -1,0 +1,56 @@
+{
+  "status":1,
+  "result":{
+    "totalMoney":109,
+    "list":[
+      {
+        "productId":"600100002115",
+        "productName":"TF口红",
+        "productPrice":389,
+        "productQuantity":1,
+        "productImage":"img/goods-1.jpg",
+        "parts":[
+          {
+            "partsId":"10001",
+            "partsName":"Dior香水小样",
+            "imgSrc":"img/part-1.jpg"
+          }
+        ]
+      },
+      {
+        "productId":"600100002120",
+        "productName":"Sk-2 神仙水",
+        "productPrice":1246,
+        "productQuantity":1,
+        "productImage":"img/goods-2.jpg",
+        "parts":[
+          {
+            "partsId":"20001",
+            "partsName":"前男友面膜",
+            "imgSrc":"img/part-2.jpg"
+          }
+        ]
+      },
+      {
+        "productId":"600100002117",
+        "productName":"Dior 999",
+        "productPrice":298,
+        "productQuantity":2,
+        "productImage":"img/goods-3.jpg",
+        "parts":[
+          {
+            "partsId":"10001",
+            "partsName":"面膜-1",
+            "imgSrc":"img/part-1.jpg"
+          },
+          {
+            "partsId":"10002",
+            "partsName":"眼膜-2",
+            "imgSrc":"img/part-1.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  "message":""
+}
