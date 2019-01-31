@@ -15,6 +15,11 @@
             padding: 5px 10px;
             text-align: center;
         }
+        [v-cloak] { display: none;}
+        /* CSS中添加全局样式   [v-cloak] { display: none;}
+
+        比如 ：<div v-cloak>  {{ message }} </div>，加载DOM时就不会显示{{}}了 
+        */
     </style>
 </head>
 <body>
@@ -69,7 +74,7 @@
                   <li v-for="(item, index) in productList" :key="index">
                     <div class="cart-tab-1">
                       <div class="cart-item-check">
-                        <a href="javascript:void 0" class="item-check-btn">
+                        <a href="javascript:void 0" class="item-check-btn" :class="{'check':item.checked}" @click="selectedProduct(item)">
                           <svg class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg>
                         </a>
                       </div>
@@ -79,7 +84,7 @@
                       </div>
                       <div class="cart-item-title">
                         <!-- 商品名字 -->
-                        <div class="item-name">{{item.productName}}</div>
+                        <div class="item-name" v-text="item.productName"></div>
                       </div>
                       <div class="item-include">
                         <dl>
@@ -91,16 +96,16 @@
                     </div>
                     <div class="cart-tab-2">
                       <!-- 商品单价 -->
-                      <div class="item-price">{{item.productPrice}}</div>
+                      <div class="item-price" v-cloak>{{item.productPrice | formatMoney}}</div>
                     </div>
                     <div class="cart-tab-3">
                       <div class="item-quantity">
                         <div class="select-self select-self-open">
                           <div class="quantity">
-                            <a href="javascript:void 0"></a>
                             <!-- 商品数量 -->
+                            <a href="javascript:void 0" @click="changeMoney(item,-1)">-</a>
                             <input type="text" value="0" disabled v-model="item.productQuantity">
-                            <a href="javascript:void 0" @click="add">+</a>
+                            <a href="javascript:void 0" @click="changeMoney(item,1)">+</a>
                           </div>
                         </div>
                         <div class="item-stock">有货</div>
@@ -108,11 +113,11 @@
                     </div>
                     <div class="cart-tab-4">
                       <!-- 商品总金额=单价*数量 -->
-                      <div class="item-price-total">{{item.productPrice*item.productQuantity}}</div>
+                      <div class="item-price-total" v-cloak>{{item.productPrice*item.productQuantity | money('元')}}</div>
                     </div>
                     <div class="cart-tab-5">
                       <div class="cart-item-operation">
-                        <a href="javascript:void 0" class="item-edit-btn">
+                        <a href="javascript:void 0" class="item-edit-btn" @click="delConfirm(item)">
                           <svg class="icon icon-del"><use xlink:href="#icon-del" ></use></svg>
                         </a>
                         <p>移入我的收藏</p>
@@ -128,14 +133,14 @@
               <div class="cart-foot-l">
                 <div class="item-all-check">
                   <a href="javascript:void 0">
-                    <span class="item-check-btn" >
+                    <span class="item-check-btn" :class="{'check':checkAllFlag}" @click="checkAll(true)">
                       <svg class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg>
                     </span>
                     <span>全选</span>
                   </a>
                 </div>
                 <div class="item-all-del">
-                  <a href="javascript:void 0" class="item-del-btn">
+                  <a href="javascript:void 0" class="item-del-btn" @click="checkAll(false)">
                     <span>取消全选</span>
                   </a>
                 </div>
@@ -147,7 +152,7 @@
               </div>
               <div class="cart-foot-r">
                 <div class="item-total">
-                  总价（不含运费）: <span class="total-price"></span>
+                  总价（不含运费）: <span class="total-price" v-cloak>{{totalMoney}}</span>
                 </div>
                 <div class="next-btn-wrap">
                   <a href="javascrit:;" class="btn btn--red" style="width: 100px">去结算</a>
@@ -157,26 +162,26 @@
           </div>
         </div>
 
-        <div class="md-modal modal-msg md-modal-transition" id="showModal">
+        <div class="md-modal modal-msg md-modal-transition" id="showModal" :class="{'md-show':delFlag}">
           <div class="md-modal-inner">
             <div class="md-top">
-              <button class="md-close">关闭</button>
+              <button class="md-close" @click="delFlag=false">关闭</button>
             </div>
             <div class="md-content">
               <div class="confirm-tips">
                 <p id="cusLanInfo">你确认删除此订单信息吗?</p>
               </div>
               <div class="btn-wrap col-2">
-                <button class="btn btn--m" id="btnModalConfirm">Yes</button>
-                <button class="btn btn--m btn--red" id="btnModalCancel">No</button>
+                <button class="btn btn--m" id="btnModalConfirm" @click="delProduct()">Yes</button>
+                <button class="btn btn--m btn--red" id="btnModalCancel" @click="delFlag=false">No</button>
               </div>
             </div>
           </div>
         </div>
+        <div class="md-overlay" v-if="delFlag"></div>
       </div>
     </div>
-
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="js/lib/vue.min.js"></script>
     <script src="js/lib/vue-resource.js"></script>
     <script src="js/cart.js"></script>
 </body>

@@ -270,12 +270,14 @@ body {
     color: #fff; }
 
 input[type="text"], textarea {
-  padding: .5em 20px;
+  padding: .6em 20px;
   border: 1px solid #bbb;
-  background: white; }
+  background: white; 
+  width: 50px;
+}
 
 .up-down-btn {
-  color: #EE7A23; }
+  color: #ff5160; }
 
 .i-up-down {
   position: relative;
@@ -292,7 +294,7 @@ input[type="text"], textarea {
     top: 0;
     width: 8px;
     height: 1px;
-    background: #EE7A23; }
+    background: #ff5160; }
   .i-up-down .i-up-down-l {
     left: 0;
     -ms-transform: rotate(40deg);

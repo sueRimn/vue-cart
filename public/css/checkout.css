@@ -33,10 +33,10 @@
       border-radius: 50%;
       background: #ccc; }
     .check-step li.cur {
-      border-color: #EE7A23;
-      color: #EE7A23; }
+      border-color: #ff5160;
+      color: #ff5160; }
     .check-step li.cur:after {
-      background: #EE7A23; }
+      background: #ff5160; }
 
 @media only screen and (max-width: 767px) {
   .check-step ul {
@@ -71,14 +71,14 @@
     height: 40px;
     overflow: hidden; }
   .addr-list li .tel {
-    color: #ff5160; }
+    color: #333; }
   .addr-list li .addr-opration {
     position: absolute; }
     .addr-list li .addr-opration .icon {
       width: 100%;
       height: 100%; }
     .addr-list li .addr-opration:hover .icon {
-      fill: #EE7A23; }
+      fill: #ff5160; }
   .addr-list li .addr-edit {
     display: none;
     top: 20px;
@@ -94,14 +94,14 @@
   .addr-list li .addr-set-default, .addr-list li .addr-default {
     bottom: 15px;
     left: 20px;
-    color: #EE7A23; }
+    color: #ff5160; }
 .addr-list li .addr-set-default {
   display: none;
 }
   .addr-list li:nth-child(4n) {
     margin-right: 0; }
   .addr-list li:hover {
-    border-color: #EE7A23; }
+    border-color: #ff5160; }
   .addr-list li.addr-new {
     color: #333;
     text-align: center; }
@@ -118,7 +118,7 @@
       .addr-list li.addr-new .add-new-inner p {
         margin-top: 10px; }
   .addr-list li.check {
-    border-color: #EE7A23;
+    border-color: #ff5160;
     border-width: 2px; }
     .addr-list li.check .addr-opration {
       display: block; }
@@ -285,8 +285,8 @@
     -ms-transform: scale(0.8);
         transform: scale(0.8); }
   .item-check-btn.check {
-    background: #EE7A23;
-    border-color: #EE7A23; }
+    background: #ff5160;
+    border-color: #ff5160; }
     .item-check-btn.check .icon-ok {
       display: inline-block; }
 
@@ -400,10 +400,10 @@
     .shipping-method li .price {
       font-weight: bold; }
     .shipping-method li.check {
-      border-color: #EE7A23;
+      border-color: #ff5160;
       color: #333; }
     .shipping-method li:hover {
-      border-color: #EE7A23; }
+      border-color: #ff5160; }
 
 @media only screen and (max-width: 767px) {
   .shipping-method {
@@ -621,7 +621,7 @@
     font-family: "moderat", sans-serif;
     font-weight: bold;
     font-size: 20px;
-    color: #ff5160;
+    color: #333;
     z-index: 1; }
   .checkout-title:before {
     position: absolute;
@@ -668,6 +668,7 @@
   .cart-foot-wrap .item-all-del {
     float: left;
     margin-top: 2px;
+    padding: 0 22px;
   }
   .cart-foot-wrap .cart-foot-r {
     float: right; }
