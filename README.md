@@ -2,7 +2,7 @@
 ## vue实战-实现购物车功能
 ## 前言
 > 一步步运用`vue`实现的购物车功能，适合初级做实战练习:bowtie:
-## 效果
+## 效果:cherry_blossom:
 [![sueRimn](https://img2018.cnblogs.com/blog/1450986/201901/1450986-20190130172220186-704918964.png "vue购物车")](https://www.cnblogs.com/suRimn/p/10338698.html)
 
 ## 知识点
@@ -42,3 +42,5 @@
   * [实战记录](https://www.cnblogs.com/suRimn/category/1265719.html)
   * [慕课网](https://www.imooc.com/learn/796)
   * [素材](https://github.com/lt1231/vue2.0-shoppingCart)
+## 后话:cherry_blossom:
+> 如果觉得还不错的话，可以给个小小的satrt:star:进行鼓励嘛
