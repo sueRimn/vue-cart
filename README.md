@@ -39,4 +39,4 @@
   * [我的博客](https://www.cnblogs.com/suRimn)
   * [实战记录](https://www.cnblogs.com/suRimn/category/1265719.html)
   * [慕课网](https://www.imooc.com/learn/796)
-  * [素材]（https://github.com/lt1231/vue2.0-shoppingCart）
+  * [素材](https://github.com/lt1231/vue2.0-shoppingCart)
