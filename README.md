@@ -2,7 +2,7 @@
 ## vue实战-实现购物车功能
 ## :sunny:效果
 
-> 运用`vue`实现的购物车功能，适合初级做实战练习:bowtie:
+> 一步步运用`vue`实现的购物车功能，适合初级做实战练习:bowtie:
 ## 知识点
   * `vue`指令：`v-on` `v-if` `v-bind` `v-show` `v-for` `v-text`
   * 过滤器`filter`
