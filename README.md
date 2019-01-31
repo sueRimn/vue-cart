@@ -43,4 +43,4 @@
   * [慕课网](https://www.imooc.com/learn/796)
   * [素材](https://github.com/lt1231/vue2.0-shoppingCart)
 ## 后话:cherry_blossom:
-> 如果觉得还不错的话，可以给个小小的satrt:star:进行鼓励嘛
+> 如果觉得还不错的话，可以给:star:进行鼓励嘛
