@@ -1,8 +1,10 @@
 # vue-cart
 ## vue实战-实现购物车功能
-## :sunny:效果
-
+## 前言
 > 一步步运用`vue`实现的购物车功能，适合初级做实战练习:bowtie:
+## 效果
+[![sueRimn](https://img2018.cnblogs.com/blog/1450986/201901/1450986-20190130172220186-704918964.png "vue购物车")](https://www.cnblogs.com/suRimn/p/10338698.html)
+
 ## 知识点
   * `vue`指令：`v-on` `v-if` `v-bind` `v-show` `v-for` `v-text`
   * 过滤器`filter`
