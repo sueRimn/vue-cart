@@ -64,7 +64,7 @@
         <div class="addr-list-wrap">
           <div class="addr-list">
             <ul>
-              <li v-for="(item, index) in addressList" :key="index">
+              <li v-for="(item, index) in filterAddress" :key="index" :class="{'check':index==currentIndex}" @click="currentIndex=index">
                 <dl>
                   <dt v-cloak>{{item.userName}}</dt>
                   <dd class="address" v-cloak>{{item.streetName}}</dd>
@@ -81,7 +81,7 @@
                   </a>
                 </div>
                 <div class="addr-opration addr-set-default">
-                  <a href="javascript:;" class="addr-set-default-btn" v-if="!item.isDefault"><i>设为默认</i></a>
+                  <a href="javascript:;" class="addr-set-default-btn" v-if="!item.isDefault" @click="setDefault(item.addressId)"><i>设为默认</i></a>
                 </div>
                 <div class="addr-opration addr-default" v-if="item.isDefault">默认地址</div>
               </li>
@@ -98,7 +98,7 @@
           </div>
 
           <div class="shipping-addr-more">
-            <a class="addr-more-btn up-down-btn" href="javascript:">
+            <a class="addr-more-btn up-down-btn" href="javascript:" @click="loadMore">
               more
               <i class="i-up-down">
                 <i class="i-up-down-l"></i>

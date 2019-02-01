@@ -1,19 +1,44 @@
 new Vue({
     el:'.container',
     data:{
+        limitNum: 3,//限制显示的数量
         addressList: [],//地址列表
+        currentIndex:'',//当前项
     },
     mounted: function() {
         this.$nextTick(function() {
           this.getAddressList();
         });
       },
+    computed: {//数据过滤
+        filterAddress: function () {
+            return  this.addressList.slice(0,this.limitNum);//截取0-3个地址显示 返回一个全新数组
+        }
+    },
     methods: {
         getAddressList: function () {
             this.$http.get("data/address.json").then(response => {//获取后台数据
                 let res = response.data;
                 if (res.status == '0') {//这里不能写成===
                     this.addressList = res.result;
+                }
+            })
+        },
+        loadMore: function () {//显示更多 控制显示的两种状态
+            //this.limitNum = this.addressList.length;//展示地址数组全部数据
+            let len = this.addressList.length;
+            if (this.limitNum === len){
+                this.limitNum = 3;
+            }else{
+                this.limitNum = len;
+            }
+        },
+        setDefault: function (addressId) {
+            this.addressList.forEach((address, index) => {
+                if (address.addressId == addressId) {
+                    address.isDefault = true;
+                }else{
+                    address.isDefault = false;
                 }
             })
         },
