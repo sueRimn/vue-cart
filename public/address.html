@@ -71,12 +71,12 @@
                   <dd class="tel" v-cloak>{{item.tel}}</dd>
                 </dl>
                 <div class="addr-opration addr-edit">
-                  <a href="javascript:;" class="addr-edit-btn">
+                  <a href="javascript:;" class="addr-edit-btn" @click="editAddress(item.addressId)">
                     <svg class="icon icon-edit"><use xlink:href="#icon-edit"></use></svg>
                   </a>
                 </div>
                 <div class="addr-opration addr-del">
-                  <a href="javascript:;" class="addr-del-btn">
+                  <a href="javascript:;" class="addr-del-btn" @click="delConfirm(item)>
                     <svg class="icon icon-del"><use xlink:href="#icon-del"></use></svg>
                   </a>
                 </div>
@@ -129,7 +129,7 @@
         <div class="next-btn-wrap">
           <a href="javascript:;" class="btn btn--red">下一步</a>
         </div>
-        <div class="md-modal modal-msg md-modal-transition" id="showModal">
+        <div class="md-modal modal-msg md-modal-transition" id="showModal" :class="{'md-show': delStatus}">
           <div class="md-modal-inner">
             <div class="md-top">
               <button class="md-close">关闭</button>
@@ -139,13 +139,13 @@
                 <p id="cusLanInfo">你确认删除此配送地址信息吗?</p>
               </div>
               <div class="btn-wrap col-2">
-                <button class="btn btn--m" id="btnModalConfirm">Yes</button>
-                <button class="btn btn--m btn--red" id="btnModalCancel">No</button>
+                <button class="btn btn--m" id="btnModalConfirm" @click="delAddress">Yes</button>
+                <button class="btn btn--m btn--red" id="btnModalCancel" @click="delStatus=false">No</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="md-modal modal-msg md-modal-transition" id="showModalw">
+        <div class="md-modal modal-msg md-modal-transition" id="showModalw" :class="{'md-show': insFlag}">
           <div class="md-modal-inner">
             <div class="md-top">
               <button class="md-close">关闭</button>
@@ -190,8 +190,7 @@
             </div>
           </div>
         </div>
-<!--         <div class="md-overlay" id="showOverLay"></div>
- -->
+        <div class="md-overlay" id="showOverLay" v-show="insFlag"></div>
       </div>
     </div>
   </div>

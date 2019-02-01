@@ -4,6 +4,14 @@ new Vue({
         limitNum: 3,//限制显示的数量
         addressList: [],//地址列表
         currentIndex:'',//当前项
+        delStatus: false,
+        insFlag: false,
+        curAddress:" ",
+        name: '',
+        streetName:'',
+        phone:'',
+        fromStatus: '' ,
+        checkIndex: ''
     },
     mounted: function() {
         this.$nextTick(function() {
@@ -42,6 +50,19 @@ new Vue({
                 }
             })
         },
+        delConfirm: function(item) {
+            this.delStatus = true;
+            this.curAddress = item;
+          },
+          delAddress: function () {
+            var index = this.addressList.indexOf(this.curAddress);
+            this.addressList.splice(index, 1)
+            this.delStatus = false;
+          },
+          insConfirm: function(item) {
+            this.insFlag = true;
+            this.curAddress = item;
+          },
         addAddress: function (item) {
             this.fromStatus = 0;
             var a = this.addressList[this.addressList.length-1];
@@ -68,5 +89,23 @@ new Vue({
               }
             })
         },
+        saveFrom: function () {
+            if(this.fromStatus == 0){
+              this.addAddress();
+            }
+            if(this.fromStatus == 1) {
+              // alert(this.checkIndex);
+              this.addressList.splice(this.checkIndex, 1, {
+               addressId: this.addressId,
+               userName: this.name,
+               streetName: this.streetName,
+               tel: this.phone
+             });
+              this.editAddress();
+             
+              this.insFlag = false;
+              
+            }
+        }
     },
 });
