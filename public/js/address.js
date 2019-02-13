@@ -53,16 +53,16 @@ new Vue({
         delConfirm: function(item) {
             this.delStatus = true;
             this.curAddress = item;
-          },
-          delAddress: function () {
-            var index = this.addressList.indexOf(this.curAddress);
-            this.addressList.splice(index, 1)
-            this.delStatus = false;
-          },
-          insConfirm: function(item) {
-            this.insFlag = true;
-            this.curAddress = item;
-          },
+        },
+        delAddress: function () {
+        var index = this.addressList.indexOf(this.curAddress);
+        this.addressList.splice(index, 1)
+        this.delStatus = false;
+        },
+        insConfirm: function(item) {
+        this.insFlag = true;
+        this.curAddress = item;
+        },
         addAddress: function (item) {
             this.fromStatus = 0;
             var a = this.addressList[this.addressList.length-1];
@@ -102,7 +102,6 @@ new Vue({
                tel: this.phone
              });
               this.editAddress();
-             
               this.insFlag = false;
               
             }

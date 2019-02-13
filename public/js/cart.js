@@ -60,7 +60,7 @@ new Vue({
             this.calcTotalPrice();//选中商品后调用计算总金额函数
         },
         checkAll: function (flag) {
-            this.checkAllFlag = flag;
+            this.checkAllFlag = !this.checkAllFlag;
             this.productList.forEach((item, index) => {
                 if(typeof item.checked == 'undefined') {//检测属性是否存在
                     this.$set(item, "checked", this.checkAllFlag);//局部注册

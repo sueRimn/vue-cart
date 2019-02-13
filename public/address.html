@@ -76,7 +76,7 @@
                   </a>
                 </div>
                 <div class="addr-opration addr-del">
-                  <a href="javascript:;" class="addr-del-btn" @click="delConfirm(item)>
+                  <a href="javascript:;" class="addr-del-btn" @click="delConfirm(item)">
                     <svg class="icon icon-del"><use xlink:href="#icon-del"></use></svg>
                   </a>
                 </div>
@@ -145,7 +145,7 @@
             </div>
           </div>
         </div>
-        <div class="md-modal modal-msg md-modal-transition" id="showModalw" :class="{'md-show': insFlag}">
+        <div class="md-modal modal-msg md-modal-transition" id="showModal" :class="{'md-show': insFlag}">
           <div class="md-modal-inner">
             <div class="md-top">
               <button class="md-close">关闭</button>
@@ -184,7 +184,7 @@
                 </div>
               </div>
               <div class="btn-wrap col-2">
-                <button class="btn btn--s" id="btnModalConfirms">保存</button>
+                <button class="btn btn--s" id="btnModalConfirms" @click="saveFrom">保存</button>
                 <button class="btn btn--s btn--red" id="btnModalCancels">取消</button>
               </div>
             </div>
