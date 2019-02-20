@@ -22,7 +22,7 @@
   * `vue`实战（三）-[`vue`实现购物车功能之渲染商品列表](https://www.cnblogs.com/suRimn/p/10338698.html)
   * `vue`实战（四）-[`vue`实现购物车功能之过滤器的使用](https://www.cnblogs.com/suRimn/p/10340871.html)
   * `vue`实战（五）-[`vue`实现购物车功能之商品金额计算和单选全选删除功能](https://www.cnblogs.com/suRimn/p/10341102.html)
-  * `vue`实战（六）-`vue`实现购物车功能之地址列表适配
+  * `vue`实战（六）-[`vue`实现购物车功能之地址列表适配](https://www.cnblogs.com/suRimn/p/10342209.html)
 ## 运行
 1. 在项目终端进入bin文件
 
